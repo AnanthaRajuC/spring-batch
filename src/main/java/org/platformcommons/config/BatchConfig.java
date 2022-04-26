@@ -1,8 +1,8 @@
-package com.yawintutor.config;
+package org.platformcommons.config;
 
-import com.yawintutor.batch.AssessmentDataProcessor;
-import com.yawintutor.batch.PtldDbReader;
-import com.yawintutor.batch.AssessmentDbWriter;
+import org.platformcommons.batch.AssessmentDataProcessor;
+import org.platformcommons.batch.PtldDbReader;
+import org.platformcommons.batch.AssessmentDbWriter;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -13,8 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.yawintutor.domain.primary.Employee;
-import com.yawintutor.domain.secondary.Manager;
+import org.platformcommons.domain.primary.Employee;
+import org.platformcommons.domain.secondary.Manager;
 
 @Configuration
 @EnableBatchProcessing

@@ -1,4 +1,4 @@
-package com.yawintutor.batch;
+package org.platformcommons.batch;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
-import com.yawintutor.domain.primary.Employee;
+import org.platformcommons.domain.primary.Employee;
 
 @Component
 @Log4j2

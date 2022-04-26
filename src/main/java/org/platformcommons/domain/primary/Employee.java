@@ -1,4 +1,4 @@
-package com.yawintutor.domain.primary;
+package org.platformcommons.domain.primary;
 
 import lombok.Getter;
 import lombok.Setter;

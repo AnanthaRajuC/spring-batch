@@ -1,4 +1,4 @@
-package com.yawintutor.config;
+package org.platformcommons.config;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(
         entityManagerFactoryRef = "primaryEntityManagerFactory",
         transactionManagerRef = "primaryTransactionManager",
-        basePackages = { "com.yawintutor.domain.primary" }
+        basePackages = { "org.platformcommons.domain.primary" }
 )
 public class PrimaryDBConfig {
 
@@ -38,7 +38,7 @@ public class PrimaryDBConfig {
                                                                               @Qualifier("primaryDataSource") DataSource primaryDataSource) {
         return builder
                 .dataSource(primaryDataSource)
-                .packages("com.yawintutor.domain.primary")
+                .packages("org.platformcommons.domain.primary")
                 .build();
     }
 

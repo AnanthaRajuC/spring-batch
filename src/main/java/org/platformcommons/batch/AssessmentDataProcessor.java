@@ -1,11 +1,11 @@
-package com.yawintutor.batch;
+package org.platformcommons.batch;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
 
-import com.yawintutor.domain.primary.Employee;
-import com.yawintutor.domain.secondary.Manager;
+import org.platformcommons.domain.primary.Employee;
+import org.platformcommons.domain.secondary.Manager;
 
 @Component
 @Log4j2
