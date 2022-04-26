@@ -1,4 +1,4 @@
-package org.platformcommons.domain.primary;
+package org.platformcommons.domain.ptld;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

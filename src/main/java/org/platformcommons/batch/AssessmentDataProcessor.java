@@ -4,8 +4,8 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
 
-import org.platformcommons.domain.primary.Employee;
-import org.platformcommons.domain.secondary.Manager;
+import org.platformcommons.domain.ptld.Employee;
+import org.platformcommons.domain.assessmentdb.Manager;
 
 @Component
 @Log4j2

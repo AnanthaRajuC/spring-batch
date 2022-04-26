@@ -13,8 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import org.platformcommons.domain.primary.Employee;
-import org.platformcommons.domain.secondary.Manager;
+import org.platformcommons.domain.ptld.Employee;
+import org.platformcommons.domain.assessmentdb.Manager;
 
 @Configuration
 @EnableBatchProcessing

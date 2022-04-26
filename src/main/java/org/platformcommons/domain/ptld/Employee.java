@@ -1,4 +1,4 @@
-package org.platformcommons.domain.secondary;
+package org.platformcommons.domain.ptld;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,12 +7,12 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "manager")
+@Table(name = "employee")
 @Getter
 @Setter
 @ToString
-public class Manager {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Employee {
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private int id;
     private String name;

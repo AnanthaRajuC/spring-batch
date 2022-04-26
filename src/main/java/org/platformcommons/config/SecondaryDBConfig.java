@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(
         entityManagerFactoryRef = "secondaryEntityManagerFactory",
         transactionManagerRef = "secondaryTransactionManager",
-        basePackages = { "org.platformcommons.domain.secondary" }
+        basePackages = { "org.platformcommons.domain.assessmentdb" }
 )
 public class SecondaryDBConfig {
 
@@ -35,7 +35,7 @@ public class SecondaryDBConfig {
                                                                                 @Qualifier("secondaryDataSource") DataSource secondaryDataSource) {
         return builder
                 .dataSource(secondaryDataSource)
-                .packages("org.platformcommons.domain.secondary")
+                .packages("org.platformcommons.domain.assessmentdb")
                 .build();
     }
 

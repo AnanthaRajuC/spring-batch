@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(
         entityManagerFactoryRef = "primaryEntityManagerFactory",
         transactionManagerRef = "primaryTransactionManager",
-        basePackages = { "org.platformcommons.domain.primary" }
+        basePackages = { "org.platformcommons.domain.ptld" }
 )
 public class PrimaryDBConfig {
 
@@ -38,7 +38,7 @@ public class PrimaryDBConfig {
                                                                               @Qualifier("primaryDataSource") DataSource primaryDataSource) {
         return builder
                 .dataSource(primaryDataSource)
-                .packages("org.platformcommons.domain.primary")
+                .packages("org.platformcommons.domain.ptld")
                 .build();
     }
 
