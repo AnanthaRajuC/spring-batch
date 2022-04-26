@@ -48,6 +48,3 @@ public class PtldDBConfig {
         return new JpaTransactionManager(ptldEntityManagerFactory);
     }
 }
-
-
-

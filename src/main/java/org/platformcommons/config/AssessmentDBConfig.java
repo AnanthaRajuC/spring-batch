@@ -18,30 +18,30 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        entityManagerFactoryRef = "secondaryEntityManagerFactory",
-        transactionManagerRef = "secondaryTransactionManager",
+        entityManagerFactoryRef = "assessmentEntityManagerFactory",
+        transactionManagerRef = "assessmentTransactionManager",
         basePackages = { "org.platformcommons.domain.assessmentdb" }
 )
 public class AssessmentDBConfig {
 
-    @Bean(name="secondaryDataSource")
-    @ConfigurationProperties(prefix="spring.seconddatasource")
-    public DataSource secondaryDataSource() {
+    @Bean(name="assessmentDataSource")
+    @ConfigurationProperties(prefix="spring.assessmentdb")
+    public DataSource assessmentDataSource() {
         return DataSourceBuilder.create().build();
     }
 
-    @Bean(name = "secondaryEntityManagerFactory")
-    public LocalContainerEntityManagerFactoryBean secondaryEntityManagerFactory(EntityManagerFactoryBuilder builder,
-                                                                                @Qualifier("secondaryDataSource") DataSource secondaryDataSource) {
+    @Bean(name = "assessmentEntityManagerFactory")
+    public LocalContainerEntityManagerFactoryBean assessmentEntityManagerFactory(EntityManagerFactoryBuilder builder,
+                                                                                 @Qualifier("assessmentDataSource") DataSource assessmentDataSource) {
         return builder
-                .dataSource(secondaryDataSource)
+                .dataSource(assessmentDataSource)
                 .packages("org.platformcommons.domain.assessmentdb")
                 .build();
     }
 
-    @Bean(name = "secondaryTransactionManager")
-    public PlatformTransactionManager secondaryTransactionManager(
-            @Qualifier("secondaryEntityManagerFactory") EntityManagerFactory secondaryEntityManagerFactory) {
-        return new JpaTransactionManager(secondaryEntityManagerFactory);
+    @Bean(name = "assessmentTransactionManager")
+    public PlatformTransactionManager assessmentTransactionManager(
+            @Qualifier("assessmentEntityManagerFactory") EntityManagerFactory assessmentEntityManagerFactory) {
+        return new JpaTransactionManager(assessmentEntityManagerFactory);
     }
 }
