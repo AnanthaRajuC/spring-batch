@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
         transactionManagerRef = "primaryTransactionManager",
         basePackages = { "org.platformcommons.domain.ptld" }
 )
-public class PrimaryDBConfig {
+public class PtldDBConfig {
 
     @Bean(name="primaryDataSource")
     @Primary

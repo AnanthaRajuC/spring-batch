@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
         transactionManagerRef = "secondaryTransactionManager",
         basePackages = { "org.platformcommons.domain.assessmentdb" }
 )
-public class SecondaryDBConfig {
+public class AssessmentDBConfig {
 
     @Bean(name="secondaryDataSource")
     @ConfigurationProperties(prefix="spring.seconddatasource")
