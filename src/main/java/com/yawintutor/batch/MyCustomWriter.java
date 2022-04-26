@@ -2,6 +2,7 @@ package com.yawintutor.batch;
 
 import java.util.List;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -10,6 +11,7 @@ import com.yawintutor.secondary.Manager;
 import com.yawintutor.secondary.ManagerRepository;
 
 @Component
+@Log4j2
 public class MyCustomWriter implements ItemWriter<Manager> {
 
     @Autowired
@@ -18,7 +20,7 @@ public class MyCustomWriter implements ItemWriter<Manager> {
     @Override
     public void write(List<? extends Manager> list) throws Exception {
         for (Manager data : list) {
-            System.out.println("MyCustomWriter    : Writing data    : " + data.getId()+" : "+data.getName()+" : "+data.getSalary());
+            log.info("MyCustomWriter    : Writing data    : " + data.getId()+" : "+data.getName()+" : "+data.getSalary());
             managerRepository.save(data);
         }
     }
