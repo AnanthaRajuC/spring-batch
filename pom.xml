@@ -12,7 +12,7 @@
 	<artifactId>SpringBootBatchDBToDB</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SpringBootBatchDBToDB</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Assessment data copy from ptld to Assessment_DB </description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
