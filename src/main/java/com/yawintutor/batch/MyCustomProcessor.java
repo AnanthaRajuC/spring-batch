@@ -1,4 +1,4 @@
-package com.yawintutor;
+package com.yawintutor.batch;
 
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;

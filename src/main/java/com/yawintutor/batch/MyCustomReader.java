@@ -1,4 +1,4 @@
-package com.yawintutor;
+package com.yawintutor.batch;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

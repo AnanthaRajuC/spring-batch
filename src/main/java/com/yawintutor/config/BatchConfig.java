@@ -1,5 +1,8 @@
-package com.yawintutor;
+package com.yawintutor.config;
 
+import com.yawintutor.batch.MyCustomProcessor;
+import com.yawintutor.batch.MyCustomReader;
+import com.yawintutor.batch.MyCustomWriter;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
