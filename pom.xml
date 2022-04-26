@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.platformcommons</groupId>
-	<artifactId>SpringBootBatchDBToDB</artifactId>
+	<artifactId>PtldToAssessmentDbDataCopy</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SpringBootBatchDBToDB</name>
 	<description>Assessment data copy from ptld to Assessment_DB </description>
