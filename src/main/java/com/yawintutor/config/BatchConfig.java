@@ -13,8 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.yawintutor.primary.Employee;
-import com.yawintutor.secondary.Manager;
+import com.yawintutor.domain.primary.Employee;
+import com.yawintutor.domain.secondary.Manager;
 
 @Configuration
 @EnableBatchProcessing

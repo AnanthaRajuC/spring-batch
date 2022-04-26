@@ -7,8 +7,8 @@ import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.yawintutor.secondary.Manager;
-import com.yawintutor.secondary.ManagerRepository;
+import com.yawintutor.domain.secondary.Manager;
+import com.yawintutor.domain.secondary.ManagerRepository;
 
 @Component
 @Log4j2

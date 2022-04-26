@@ -1,4 +1,4 @@
-package com.yawintutor.secondary;
+package com.yawintutor.domain.secondary;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

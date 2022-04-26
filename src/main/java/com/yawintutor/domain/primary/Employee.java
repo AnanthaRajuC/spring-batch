@@ -1,4 +1,4 @@
-package com.yawintutor.primary;
+package com.yawintutor.domain.primary;
 
 import lombok.Getter;
 import lombok.Setter;

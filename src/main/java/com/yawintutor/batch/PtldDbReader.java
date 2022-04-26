@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
-import com.yawintutor.primary.Employee;
+import com.yawintutor.domain.primary.Employee;
 
 @Component
 public class PtldDbReader extends JdbcCursorItemReader<Employee> implements ItemReader<Employee>{
