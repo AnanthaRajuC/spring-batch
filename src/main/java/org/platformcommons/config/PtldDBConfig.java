@@ -19,32 +19,35 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        entityManagerFactoryRef = "primaryEntityManagerFactory",
-        transactionManagerRef = "primaryTransactionManager",
+        entityManagerFactoryRef = "ptldEntityManagerFactory",
+        transactionManagerRef = "ptldTransactionManager",
         basePackages = { "org.platformcommons.domain.ptld" }
 )
 public class PtldDBConfig {
 
-    @Bean(name="primaryDataSource")
+    @Bean(name="ptldDataSource")
     @Primary
-    @ConfigurationProperties(prefix="spring.datasource")
-    public DataSource primaryDataSource() {
+    @ConfigurationProperties(prefix="spring.ptlddb")
+    public DataSource ptldDataSource() {
         return DataSourceBuilder.create().build();
     }
 
     @Primary
-    @Bean(name = "primaryEntityManagerFactory")
-    public LocalContainerEntityManagerFactoryBean primaryEntityManagerFactory(EntityManagerFactoryBuilder builder,
-                                                                              @Qualifier("primaryDataSource") DataSource primaryDataSource) {
+    @Bean(name = "ptldEntityManagerFactory")
+    public LocalContainerEntityManagerFactoryBean ptldEntityManagerFactory(EntityManagerFactoryBuilder builder,
+                                                                           @Qualifier("ptldDataSource") DataSource ptldDataSource) {
         return builder
-                .dataSource(primaryDataSource)
+                .dataSource(ptldDataSource)
                 .packages("org.platformcommons.domain.ptld")
                 .build();
     }
 
-    @Bean(name = "primaryTransactionManager")
-    public PlatformTransactionManager primaryTransactionManager(
-            @Qualifier("primaryEntityManagerFactory") EntityManagerFactory primaryEntityManagerFactory) {
-        return new JpaTransactionManager(primaryEntityManagerFactory);
+    @Bean(name = "ptldTransactionManager")
+    public PlatformTransactionManager ptldTransactionManager(
+            @Qualifier("ptldEntityManagerFactory") EntityManagerFactory ptldEntityManagerFactory) {
+        return new JpaTransactionManager(ptldEntityManagerFactory);
     }
 }
+
+
+

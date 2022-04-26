@@ -12,12 +12,13 @@ import org.platformcommons.domain.ptld.AssessmentPtld;
 public class AssessmentDataProcessor implements ItemProcessor<AssessmentPtld, Assessment> {
 
     @Override
-    public Assessment process(AssessmentPtld emp) throws Exception {
-        log.info("Assessment Data Processor : Processing data : "+emp.toString());
+    public Assessment process(AssessmentPtld assessmentPtld) throws Exception {
+        log.info("Assessment Data Processor : Processing data : "+assessmentPtld.toString());
+
         Assessment assessment = new Assessment();
-        //assessment.setId(emp.getId());
-        assessment.setFarmer_name(emp.getFarmer_name().toUpperCase());
-        assessment.setOwning_entity_id(emp.getOwning_entity_id());
+        assessment.setFarmer_name(assessmentPtld.getFarmer_name().toUpperCase());
+        assessment.setOwning_entity_id(assessmentPtld.getOwning_entity_id());
+
         return assessment;
     }
 }
