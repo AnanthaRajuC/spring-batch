@@ -9,7 +9,7 @@ import com.yawintutor.secondary.Manager;
 
 @Component
 @Log4j2
-public class MyCustomProcessor implements ItemProcessor<Employee, Manager> {
+public class AssessmentDataProcessor implements ItemProcessor<Employee, Manager> {
 
     @Override
     public Manager process(Employee emp) throws Exception {
