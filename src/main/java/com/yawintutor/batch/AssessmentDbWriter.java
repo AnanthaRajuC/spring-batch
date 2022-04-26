@@ -12,7 +12,7 @@ import com.yawintutor.secondary.ManagerRepository;
 
 @Component
 @Log4j2
-public class MyCustomWriter implements ItemWriter<Manager> {
+public class AssessmentDbWriter implements ItemWriter<Manager> {
 
     @Autowired
     ManagerRepository managerRepository ;

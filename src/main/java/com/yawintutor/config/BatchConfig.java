@@ -2,7 +2,7 @@ package com.yawintutor.config;
 
 import com.yawintutor.batch.MyCustomProcessor;
 import com.yawintutor.batch.PtldDbReader;
-import com.yawintutor.batch.MyCustomWriter;
+import com.yawintutor.batch.AssessmentDbWriter;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -29,7 +29,7 @@ public class BatchConfig {
     PtldDbReader ptldDbReader;
 
     @Autowired
-    MyCustomWriter myCustomWriter;
+    AssessmentDbWriter assessmentDbWriter;
 
     @Autowired
     MyCustomProcessor myCustomProcessor;
@@ -47,7 +47,7 @@ public class BatchConfig {
                 .<Employee, Manager> chunk(1)
                 .reader(ptldDbReader)
                 .processor(myCustomProcessor)
-                .writer(myCustomWriter)
+                .writer(assessmentDbWriter)
                 .build();
     }
 }
