@@ -7,7 +7,7 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "manager")
+@Table(name = "assessment")
 @Getter
 @Setter
 @ToString
@@ -15,6 +15,6 @@ public class Assessment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int id;
-    private String name;
-    private int salary;
+    private String farmer_name;
+    private int owning_entity_id;
 }

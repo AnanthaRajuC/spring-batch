@@ -3,6 +3,7 @@ package org.platformcommons.config;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersBuilder;
@@ -14,6 +15,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 @Configuration
 @EnableScheduling
+@Log4j2
 public class SchedulerConfig {
 
     @Autowired
@@ -26,10 +28,10 @@ public class SchedulerConfig {
 
     @Scheduled(fixedDelay = 5000, initialDelay = 5000)
     public void scheduleByFixedRate() throws Exception {
-        System.out.println("Batch job starting");
+        log.info("Batch job starting");
         JobParameters jobParameters = new JobParametersBuilder()
                 .addString("time", format.format(Calendar.getInstance().getTime())).toJobParameters();
         jobLauncher.run(job, jobParameters);
-        System.out.println("Batch job executed successfully\n");
+        log.info("Batch job executed successfully\n");
     }
 }

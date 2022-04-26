@@ -16,8 +16,8 @@ public class AssessmentDataProcessor implements ItemProcessor<AssessmentPtld, As
         log.info("Assessment Data Processor : Processing data : "+emp.toString());
         Assessment assessment = new Assessment();
         //assessment.setId(emp.getId());
-        assessment.setName(emp.getName().toUpperCase());
-        assessment.setSalary(emp.getSalary());
+        assessment.setFarmer_name(emp.getFarmer_name().toUpperCase());
+        assessment.setOwning_entity_id(emp.getOwning_entity_id());
         return assessment;
     }
 }

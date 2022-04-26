@@ -21,7 +21,7 @@ public class PtldDbReader extends JdbcCursorItemReader<AssessmentPtld> implement
     public PtldDbReader(@Autowired DataSource primaryDataSource) {
         log.info("Ptld Db Reader : Reading Data");
         setDataSource(primaryDataSource);
-        setSql("SELECT id, name, salary FROM employee");
+        setSql("SELECT id, farmer_name, owning_entity_id FROM assessment_ptld");
         setFetchSize(100);
         setRowMapper(new EmployeeRowMapper());
     }
@@ -32,8 +32,8 @@ public class PtldDbReader extends JdbcCursorItemReader<AssessmentPtld> implement
             log.info("Mapping result set to source table object");
             AssessmentPtld assessmentPtld = new AssessmentPtld();
             assessmentPtld.setId(rs.getInt("id"));
-            assessmentPtld.setName(rs.getString("name"));
-            assessmentPtld.setSalary(rs.getInt("salary"));
+            assessmentPtld.setFarmer_name(rs.getString("farmer_name"));
+            assessmentPtld.setOwning_entity_id(rs.getInt("owning_entity_id"));
             return assessmentPtld;
         }
     }
