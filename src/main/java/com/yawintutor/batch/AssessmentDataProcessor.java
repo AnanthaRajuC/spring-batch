@@ -13,7 +13,7 @@ public class AssessmentDataProcessor implements ItemProcessor<Employee, Manager>
 
     @Override
     public Manager process(Employee emp) throws Exception {
-        log.info("MyBatchProcessor : Processing data : "+emp);
+        log.info("Assessment Data Processor : Processing data : "+emp.toString());
         Manager manager = new Manager();
         //manager.setId(emp.getId());
         manager.setName(emp.getName().toUpperCase());

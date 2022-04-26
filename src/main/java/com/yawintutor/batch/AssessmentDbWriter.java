@@ -20,7 +20,7 @@ public class AssessmentDbWriter implements ItemWriter<Manager> {
     @Override
     public void write(List<? extends Manager> list) throws Exception {
         for (Manager data : list) {
-            log.info("MyCustomWriter    : Writing data    : " + data.getId()+" : "+data.getName()+" : "+data.getSalary());
+            log.info("Assessment Db Writer    : Writing data    : " + data.getId()+" : "+data.getName()+" : "+data.getSalary());
             managerRepository.save(data);
         }
     }

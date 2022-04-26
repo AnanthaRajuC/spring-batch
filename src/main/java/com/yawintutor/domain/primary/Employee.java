@@ -2,6 +2,7 @@ package com.yawintutor.domain.primary;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
 @Table(name = "employee")
 @Getter
 @Setter
+@ToString
 public class Employee {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id

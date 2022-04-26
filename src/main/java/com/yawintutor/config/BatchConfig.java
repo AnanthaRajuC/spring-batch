@@ -36,14 +36,14 @@ public class BatchConfig {
 
     @Bean
     public Job createJob() {
-        return jobBuilderFactory.get("MyJob")
+        return jobBuilderFactory.get("Assessment-Data-Job")
                 .incrementer(new RunIdIncrementer())
                 .flow(createStep()).end().build();
     }
 
     @Bean
     public Step createStep() {
-        return stepBuilderFactory.get("MyStep")
+        return stepBuilderFactory.get("Read-Ptld-Process-Write-AssessmentDB")
                 .<Employee, Manager> chunk(1)
                 .reader(ptldDbReader)
                 .processor(assessmentDataProcessor)
