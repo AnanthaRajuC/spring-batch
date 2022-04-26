@@ -1,7 +1,7 @@
 package com.yawintutor.config;
 
 import com.yawintutor.batch.MyCustomProcessor;
-import com.yawintutor.batch.MyCustomReader;
+import com.yawintutor.batch.PtldDbReader;
 import com.yawintutor.batch.MyCustomWriter;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -26,7 +26,7 @@ public class BatchConfig {
     public StepBuilderFactory stepBuilderFactory;
 
     @Autowired
-    MyCustomReader myCustomReader;
+    PtldDbReader ptldDbReader;
 
     @Autowired
     MyCustomWriter myCustomWriter;
@@ -45,7 +45,7 @@ public class BatchConfig {
     public Step createStep() {
         return stepBuilderFactory.get("MyStep")
                 .<Employee, Manager> chunk(1)
-                .reader(myCustomReader)
+                .reader(ptldDbReader)
                 .processor(myCustomProcessor)
                 .writer(myCustomWriter)
                 .build();

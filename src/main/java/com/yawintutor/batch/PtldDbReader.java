@@ -14,9 +14,9 @@ import org.springframework.stereotype.Component;
 import com.yawintutor.primary.Employee;
 
 @Component
-public class MyCustomReader extends JdbcCursorItemReader<Employee> implements ItemReader<Employee>{
+public class PtldDbReader extends JdbcCursorItemReader<Employee> implements ItemReader<Employee>{
 
-    public MyCustomReader(@Autowired DataSource primaryDataSource) {
+    public PtldDbReader(@Autowired DataSource primaryDataSource) {
         setDataSource(primaryDataSource);
         setSql("SELECT id, name, salary FROM employee");
         setFetchSize(100);
