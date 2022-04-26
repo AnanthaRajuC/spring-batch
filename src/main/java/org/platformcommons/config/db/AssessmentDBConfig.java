@@ -1,4 +1,4 @@
-package org.platformcommons.config;
+package org.platformcommons.config.db;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
