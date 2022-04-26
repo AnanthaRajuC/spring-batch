@@ -18,22 +18,22 @@ import org.platformcommons.domain.ptld.AssessmentPtld;
 @Log4j2
 public class PtldDbReader extends JdbcCursorItemReader<AssessmentPtld> implements ItemReader<AssessmentPtld>{
 
-    public PtldDbReader(@Autowired DataSource primaryDataSource) {
+    public PtldDbReader(@Autowired DataSource ptldDataSource) {
         log.info("Ptld Db Reader : Reading Data");
-        setDataSource(primaryDataSource);
+        setDataSource(ptldDataSource);
         setSql("SELECT id, farmer_name, owning_entity_id FROM assessment_ptld");
         setFetchSize(100);
-        setRowMapper(new EmployeeRowMapper());
+        setRowMapper(new PtldAssessmentRowMapper());
     }
 
-    public class EmployeeRowMapper implements RowMapper<AssessmentPtld> {
+    public class PtldAssessmentRowMapper implements RowMapper<AssessmentPtld> {
         @Override
         public AssessmentPtld mapRow(ResultSet rs, int rowNum) throws SQLException {
             log.info("Mapping result set to source table object");
             AssessmentPtld assessmentPtld = new AssessmentPtld();
             assessmentPtld.setId(rs.getInt("id"));
-            assessmentPtld.setFarmer_name(rs.getString("farmer_name"));
-            assessmentPtld.setOwning_entity_id(rs.getInt("owning_entity_id"));
+            assessmentPtld.setFarmerName(rs.getString("farmer_name"));
+            assessmentPtld.setOwningEntityId(rs.getInt("owning_entity_id"));
             return assessmentPtld;
         }
     }
