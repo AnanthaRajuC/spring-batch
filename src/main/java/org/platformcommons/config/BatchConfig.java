@@ -13,8 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import org.platformcommons.domain.ptld.Employee;
-import org.platformcommons.domain.assessmentdb.Manager;
+import org.platformcommons.domain.ptld.AssessmentPtld;
+import org.platformcommons.domain.assessmentdb.Assessment;
 
 @Configuration
 @EnableBatchProcessing
@@ -44,7 +44,7 @@ public class BatchConfig {
     @Bean
     public Step createStep() {
         return stepBuilderFactory.get("Read-Ptld-Process-Write-AssessmentDB")
-                .<Employee, Manager> chunk(1)
+                .<AssessmentPtld, Assessment> chunk(1)
                 .reader(ptldDbReader)
                 .processor(assessmentDataProcessor)
                 .writer(assessmentDbWriter)

@@ -12,11 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
-import org.platformcommons.domain.ptld.Employee;
+import org.platformcommons.domain.ptld.AssessmentPtld;
 
 @Component
 @Log4j2
-public class PtldDbReader extends JdbcCursorItemReader<Employee> implements ItemReader<Employee>{
+public class PtldDbReader extends JdbcCursorItemReader<AssessmentPtld> implements ItemReader<AssessmentPtld>{
 
     public PtldDbReader(@Autowired DataSource primaryDataSource) {
         log.info("Ptld Db Reader : Reading Data");
@@ -26,15 +26,15 @@ public class PtldDbReader extends JdbcCursorItemReader<Employee> implements Item
         setRowMapper(new EmployeeRowMapper());
     }
 
-    public class EmployeeRowMapper implements RowMapper<Employee> {
+    public class EmployeeRowMapper implements RowMapper<AssessmentPtld> {
         @Override
-        public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
+        public AssessmentPtld mapRow(ResultSet rs, int rowNum) throws SQLException {
             log.info("Mapping result set to source table object");
-            Employee employee  = new Employee();
-            employee.setId(rs.getInt("id"));
-            employee.setName(rs.getString("name"));
-            employee.setSalary(rs.getInt("salary"));
-            return employee;
+            AssessmentPtld assessmentPtld = new AssessmentPtld();
+            assessmentPtld.setId(rs.getInt("id"));
+            assessmentPtld.setName(rs.getString("name"));
+            assessmentPtld.setSalary(rs.getInt("salary"));
+            return assessmentPtld;
         }
     }
 }
