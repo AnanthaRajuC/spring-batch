@@ -1,4 +1,4 @@
-package com.yawintutor;
+package com.yawintutor.config;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;

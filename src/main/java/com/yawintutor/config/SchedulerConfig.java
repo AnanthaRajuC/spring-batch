@@ -1,4 +1,4 @@
-package com.yawintutor;
+package com.yawintutor.config;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
